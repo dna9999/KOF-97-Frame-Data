@@ -1,6 +1,7 @@
 # KOF-97-Frame-Data
 KOF97全人物帧数据手册（KOF97 Complete Character Frame Data Manual）
 如你把帧数表做出能在，FBA模拟器Lua帧数显示框运行，如你愿意可以分享这个Lua，发到我的电子邮箱；dengfeng287@gmail.com   ，谢谢）
+
 KOF97 Frame Data (Complete Character Data)
 
 (These TXT files include the following data: attack frames, walk/run speeds, jump heights, recovery/dodge frames, and defense stun data.) 
