@@ -1,0 +1,224 @@
+OF97全角色起身，受身、闪避、跳跃，疾退，疾进，爆气时间数据
+
+    *下面的所有数据单位都是帧F，1F为KOF里的六十分之一秒*
+
+KOF97人物英文名对应的中文名：
+
+第一组：Kyo（草薙京）、Benimaru（二阶堂红丸）、Daimon（大门五郎） — 该组一般称之为日本队 or 主人公队
+第二组：Terry（特瑞）、Andy（安迪）、Joe（东丈） — 该组一般称之为饿狼队 or 饿狼传说队
+第三组：Ryo（坂崎良）、Robert（罗伯特）、Yuri（坂崎由莉） — 该组一般称之为龙虎之拳队 or 极限流队
+
+第四组：Leona（丽安娜）、Ralf（拉尔夫）、Clark（克拉克） — 该组一般称之为怒之队
+第五组：Athena（麻宫雅典娜）、Kensou（椎拳崇）、Chin（镇元斋） — 该组一般称之为中国队 or 超能力战士队
+第六组：Chizuru（神乐千鹤）、Mai（不知火舞）、King（金） — 该组一般称之为女子组合队 or 新女性格斗家队
+
+第七组：Kim（金家潘）、Chang（陈可汗）、Choi（蔡宝健） — 该组一般称之为韩国队 or 金家潘队
+第八组：Yashiro（七枷社）、Shermie（夏尔米）、Chris（克里斯） — 该组一般称之为为新面孔队 or 地狱乐队，隐藏人物队伍一般称之为大蛇队
+第九组：Yamzaki（山崎龙二）、Mary（布鲁玛丽）、Billy（比利） — 该组一般称之为97特别参赛队
+
+未组队：Iori（八神庵）、Shingo（矢吹真吾）
+BOSS：Orochi（大蛇）
+
+暴走人物和隐藏人物与原人物同名（当需要特别说明时，里·草薙京称之为94草薙京；其他暴走人物会在前面加上O来区分，O表示Orochi，即大蛇。如暴走八神可以表示为O·Iori，大蛇七枷社可以表示为O·Yashiro）。
+除了暴走八神和暴走丽安娜的跳跃、疾退和疾进时间与原人物不同外，其他隐藏角色的所有时间数据与原人物相同。
+ 作者：飞鸟AaronMax 
+------------------------
+起身时间数据
+    一个角色的起身时间只有两种，即躺着倒地起身和趴着倒地起身。
+所有角色被任何攻击击倒后的“起身时间”都是一致的。这里的“起身时间”我打了引号，注意，仅仅是”起身“时间，即角色出现起身动作ACT开始，到起身完毕后出现被攻击判定时为止。
+而角色被不同性质的攻击击中时，从倒地接触地面、反弹、再次接触地面、在地上静止不动，这些时间不是恒定的。
+
+举个例子，角色被普通攻击如蹲D击倒，在地上躺着不动的时间很短，只有几F，而被拉尔夫乘马机炮拳击中后，角色就要在地上躺着不动好久，接近1秒。在地上躺着/趴着静止不动的时间，可以理解为角色受创倒地后的“休息”时间，当角色受到很轻微的攻击而倒地，在地上不动休息的时间久短些，而被很重的攻击击倒后，不仅会被“轰飞”在空中打转，而且受创倒地静止不动休息的时间也要相应变久一些。而角色休息好后，开始起身了，那么这个从出现起身动作到起身完毕，这段时间是恒定的。
+
+    因此，记录起身时间的数据，应该统一为“恒定起身时间数据”，而非包含变量的相对数据，如下：
+
+KOF97全角色起身时间（按躺起身速度由慢至快排列）
+38：Chizuru
+31：Chang、Shermie、Billy
+30：Andy
+29：Chin、Chris
+28：Iori、Orochi
+27：Leona
+26：Kyo、Benimaru、King、Choi、Shingo
+25：Daimon、Terry、Kensou
+24：Yashiro
+21：Ryo、Ralf、Clark、Athena、Mai、Kim、Mary
+20：Joe、Robert
+19：Yamzaki
+16：Yuri
+
+KOF97全角色起身时间（按趴起身速度由慢至快排列）
+46：Chizuru
+35：Kim
+32：Benimaru、Leona、Chang
+31：Daimon
+30：Orochi
+29：Chin
+27：Terry、Andy、Choi
+26：Kensou、Shermie
+25：King、Yashiro
+23：Joe
+22：Ryo、Robert、Chris、Mary
+21：Ralf、Athena、Iori
+20：Kyo、Yuri、Billy、Shingo
+19：Mai、Yamzaki
+17：Clark
+
+可以看出，不论躺着还是趴着倒地，Chizuru的起身时间都是最慢的。
+
+而研究大门“超大外割”，神乐“祝词B/D+天瑞D”时，由于不同角色受创倒地到开始出现起身动作ACT时的时间段为变量，就要用到相对数据，如下：
+大门超大外割后，对手趴起身时差表，以X为基准，负数表示比X快几帧。
+x：Chizuru
+-10：Kim
+-14：Benimaru、Leona、Chang
+-15：Daimon
+-17：Chin
+-18：Terry
+-19：Andy
+-20：Choi、Shermie
+-21：Kensou、King
+-22：Yashiro、Oiochi
+-24：Joe、Ryo、Robert
+-25：Ralf、Athena、Chris、Mary、Iori
+-26：Yuri、Billy
+-27：Kyo、Mai、Yamazaki、Shingo
+-29：Clark
+
+神乐祝词B/D+天瑞D后，对手趴起身时差表，以X为基准，负数表示比X快几帧。
+x：Chizuru
+-10：Kim
+-14：Benimaru、Leona、Chang
+-15：Daimon
+-17：Chin
+-18：Oiochi
+-19：Terry
+-20：Andy、Choi、Shermie
+-21：Kensou、King
+-22：Yashiro
+-24：Joe、Ryo、Robert
+-25：Ralf、Athena、Chris、Mary、Iori
+-26：Yuri、Billy
+-27：Kyo、Mai、Yamazaki、Shingo
+-29：Clark
+
+相对数据用法：只要发现某一招数对某一人物适用，那么只需按时差表类推，就能得出对所有人物适用的方法。
+    举个例子：Daimon VS Shermie时，超大外割→↓↘+B或D击倒Shermie后，通过根返↓↘→+B或D挥空卡时间，就可以造成地雷震→↓↘+A的不可防御。大门时差表中Chang比Shermie晚起身6F，那么当Daimon VS Chang时，超大外割→↓↘+B或D击倒Chang后，就用比根返↓↘→+B或D多6F的招数地雷震→↓↘+C挥空，就可以造成地雷震→↓↘+A的不可防御。根返↓↘→+B或D为29F，地雷震→↓↘+C为35F，刚好相差6F。
+    再举个例子：Chizuru VS Chang时，神速之祝词→↘↓↙←+B或D，天瑞↓↙←+D击倒Chizuru后，通过通常跳中通常技挥空卡时间，就可以造成布阵的不可防御。神乐时差表中Daimon比Chang早起身1F，那么当Chizuru VS Daimon时，神速之祝词→↘↓↙←+B或D，天瑞↓↙←+D击倒Daimon后，就用比通过通常跳中通常技少1F的招数玉响之瑟音←↙↓↘→+A挥空，就可以造成布阵的不可防御。通过通常跳中通常技为46F，玉响之瑟音←↙↓↘→+A为45F，刚好相差1F。   
+
+=========================================================
+
+倒地受身时间数据
+KOF97全角色倒地受身时间（速度由慢至快排列）
+33：Athena
+31：Mary
+30：Choi
+29：Andy
+28：Terry、Kensou、Kim
+27：Benimaru、Robert、Chizuru、Yashiro、Yamzaki
+26：Daimon、Ryo
+25：Joe、King、Billy
+24：Leona、Ralf、Clark、Chin、Chang、Iori
+23：Kyo、Yuri、Shingo、Orochi
+22：Shermie
+20：Mai、Chris
+
+可以看出，大部分角色的倒地AB受身时间，是比原地AB闪身时间要短的，只有Athena的倒地AB受身时间和原地AB受身时间是一样的，都为33F。
+
+=========================================================
+
+AD模式AB闪身和EX模式AB闪避时间数据
+AD模式原地AB或前AB时间
+33：除了Oiochi以外的全人物
+31：Oiochi
+AD模式后AB时间
+33：除了Iori以外的全人物
+31：Iori
+EX模式AB闪避
+37：全人物
+
+可以看出，除了Iori和Oiochi以外的所有角色前后AB的时间都是一样的，而Iori和Oiochi比较特殊，Iori的后AB比前AB快了2F，Oiochi的前AB比后AB快了2F，而EX模式的AB闪避全人物是一样的。
+
+=========================================================
+
+跳跃时间数据
+    跳跃一共有4种，按时间长短排列，分为通常跳，大影跳，小跳和小影跳四种跳跃方式。影跳与非影跳在Y轴的高度是完全一样的（即通常跳和大影跳的跳跃高度一致，小跳和小影跳的跳跃高度一致）。不同的是，影跳在横向X轴的移动距离更大，即影跳距离＞非影跳距离。当角色使用通常跳时，会出现4-5F的地面起跳准备时间（这段时间身位判定框依然为地面站姿判定框），然后才会出现腾空动作（此时身位判定框为空中判定框）。而当角色第一时间使用影跳，会免去地面起跳准备时间而直接腾空（身位判定框立即转入空中判定框）。
+    跳跃中使用通常技（跳跃中A、B、C、D、CD均可），会增加角色的滞空时间。当空中通常技完全出招并完全收招时会增加2F滞空时间，一般表述为“某某跳跃中通常技挥空”、“某某跳跃上升中通常技挥空”或“某某跳跃早出招”等等。当空中通常技未完全出招或未完全收招时，只会增加1F滞空时间，一般表述为“某某跳跃落地前瞬间通常技挥空”，“某某跳跃下降中通常技挥空”或“某某跳跃晚出招”等等。跳跃第一时间通常技，即跳跃指令和通常技指令几乎同时输入，会出现只有1F起跳准备时间，第2F就跳离地面并同时出现招数判定的“最速跳招”（1F跳），一般用做起跳第一时间击中对手和卡时间用。跳跃中使用特殊技（一般为跳跃中↓+X或←+X），由于不同角色空中的特殊技特性不一，所增加的滞空时间也不一，但都遵循完全出、收招时增加X帧，未完全出、收招时增加X-1帧。
+
+全角色第一时间跳跃时间表，按跳跃时间由长到短为序排列：
+通常跳 / 大影跳
+48 / 44：Athena
+47 / 43：Choi
+45 / 41：Kensou
+44 / 40：Chizuru
+44 / 39：Joe
+43 / 39：Andy
+42 / 38：Benimaru、Leona、Mai、Billy
+42 / 37：Terry
+41 / 37：Daimon、Robert、Yuri、Chin、King、Shingo
+40 / 36：Kim
+39 / 35：Ralf、Shermie 、Yamzaki、Mary
+38 / 34：Kyo、Ryo、Clark、
+37 / 33：Chang、Oiochi
+36 / 32：Yashiro、Chris 、Iori
+35 / 31：O·Leona
+25 / 21：O·Iori
+
+小跳 / 小影跳
+37 / 33：Athena
+36 / 32：Choi
+35 / 31：Kensou
+35 / 30：Joe
+34 / 30：Chizuru
+33 / 29：Benimaru、Andy、Leona、Mai
+33 / 28：Terry
+32 / 28：Daimon、Robert、Yuri、Chin、King、Billy、Shingo
+31 / 27：Kim
+30 / 26：Ryo、Ralf、Clark 、Shermie 、Yamzaki、Mary
+29 / 25：Kyo 、Chang、Oiochi
+28 / 24：Yashiro、Chris 、Iori、O·Leona
+20 / 16：O·Iori
+
+可以看出，大部分角色起跳准备时间是4F，只有两位角色是5F，他们是：Joe、Terry。
+
+=========================================================
+
+疾退←←和EX模式疾进→→时间数据
+全角色疾退←←时间表
+32：Chin
+28：Chang
+27：Joe、Chizuru、Chris
+25：Benimaru、Kim
+24：Daimon、Terry、Robert、Leona、Ralf、Clark、Kensou、Shermie、Yamzaki、Mary、Billy、Shingo
+22：Andy、Yuri、Athena、Mai、King、Choi、Yashiro、Iori
+21：Kyo、Oiochi
+20：Ryo
+16：O·Iori、O·Leona
+
+全角色EX模式疾进→→时间表
+32：Chin
+24：Daimon、Clark
+22：Chang
+21：Iori
+20：Benimaru、Mary
+19：Yashiro
+18：Athena、Kensou、Choi、Shermie、Yamzaki
+17：Kyo、Andy、Joe、Robert、Chizuru、Kim、O·Iori、O·Leona、Oiochi
+16：Terry、Yuri、Leona、Mai、King、Billy、Shingo
+15：Ryo
+14：Chris
+
+可以看出，大部分角色的疾退时间是在22F和24F；疾退和疾进一样快的有三位角色：24F的Daimon和Clark，32F的Chin。
+
+
+=========================================================
+
+AD模式ABC爆气时间数据
+    ABC爆气时，角色开始出现全身白色闪烁（1F闪烁一次），攻击力上升约为平时的1.25倍。当那团“气”被炸开时，角色身体周围“云雾弥漫”，同时屏幕会出现类似地雷震震地时的短时上下晃动效果，以表示爆气者好牛逼的样子。唯独不知火舞和猴子没有，他俩爆气时，屏幕是静止的，难道是他俩不够霸气？！
+
+全角色ABC爆气时间表
+32：Benimaru
+29：Chang
+28：Kyo、Daimon、Terry、Andy、Joe、Ryo、Leona、Ralf、Clark、Athena、Chin、Chizuru、Kim、Choi、Yashiro、Shermie、Mary、Billy、Iori、Shingo、Oiochi
+27：Robert、Yuri、Kensou、King、Chris、Yamzaki
+26：Mai
+========================================================= 作者：飞鸟AaronMax https://www.bilibili.com/read/cv15565956/?spm_id_from=333.999.0.0 出处：bilibili
